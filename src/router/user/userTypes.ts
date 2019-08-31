@@ -1,11 +1,11 @@
-export class UserRegisterDAO {
+export class UserRegisterType {
   Email: string = "";
   Name: string = "";
   Address: string = "";
   Password: string = "";
 }
 
-export class UserDTO {
+export class UserType {
   Email: string = "";
   Name: string = "";
   Picture: string = "";

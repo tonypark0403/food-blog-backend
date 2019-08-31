@@ -3,8 +3,9 @@ export default function ModelValidator(
   model: any,
   cb: CallableFunction
 ) {
+  console.log(Object.keys(input) + ", " + Object.keys(model));
   if (Object.keys(input).length != Object.keys(model).length) {
-    cb("Model fields is out of range");
+    cb("All Model fields should be required");
   }
   Object.keys(input).forEach(key => {
     if (input[key] === "") {

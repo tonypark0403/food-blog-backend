@@ -1,3 +1,45 @@
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123"},"level":"debug"}
+{"message":"Model fields is out of range","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123"},"level":"debug"}
+{"message":"Model fields is out of range","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123"},"level":"debug"}
+{"message":"Model fields is out of range","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123"},"level":"debug"}
+{"message":"Model fields is out of range","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123"},"level":"debug"}
+{"message":"All Model fields should be required","level":"error"}
+{"message":{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}
+{"message":"email already used","level":"error"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}
+{"message":"email already used","level":"error"}
+{"message":{"Email":"test7@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"MongoDB connection error. Please make sure MongoDB is running. MongoNetworkError: failed to connect to server [blog-shard-00-01-b0jdw.mongodb.net:27017] on first connect [MongoError: bad auth Authentication failed.]","level":"debug"}
+{"message":{"Email":"test7@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St."},"level":"debug"}

@@ -3,7 +3,7 @@ import jwt from "jsonwebtoken";
 import { getUserInfo, userRegistration } from "./userService";
 import logger from "../common/util/logger";
 import ModelValidator from "../common/util/validator";
-import { UserRegisterDAO } from "./userTypes";
+import { UserRegisterType } from "./userTypes";
 
 const SESSION_SECRET: any = process.env.SESSION_SECRET;
 
@@ -50,14 +50,14 @@ export const getGoogleUser: RequestHandler = (req: any, res, next) => {
 export const registerUser: RequestHandler = async (req, res, next) => {
   try {
     logger.debug(req.body);
-    let userRegisterDAO: UserRegisterDAO = new UserRegisterDAO();
-    ModelValidator(req.body, userRegisterDAO, (err: any) => {
+    let UserRegister: UserRegisterType = new UserRegisterType();
+    ModelValidator(req.body, UserRegister, (err: any) => {
       if (err) {
         throw err;
       }
     });
-    userRegisterDAO = req.body;
-    const result = await userRegistration(userRegisterDAO);
+    UserRegister = req.body;
+    const result = await userRegistration(UserRegister);
     console.log("userRegister : ", result);
     res.status(200).send({ status: "success" });
   } catch (error) {

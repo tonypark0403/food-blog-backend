@@ -1,19 +1,19 @@
 import bcrypt from "bcrypt";
 import crypto from "crypto";
 import { Observable } from "rxjs";
-import { UserRegisterDAO, UserDTO } from "./userTypes";
+import { UserRegisterType, UserType } from "./userTypes";
 import { User } from "./userModel";
 import { MongoModelToViewModel } from "../common/util/modelCopy";
 
-export function getUserInfo(Email: string): Observable<UserDTO> {
+export function getUserInfo(Email: string): Observable<UserType> {
   return new Observable(observer => {
     User.findOne({ Email: Email })
       .then(user => {
         if (user === null) {
           observer.error("can not find a user");
         }
-        let userDTO: UserDTO = new UserDTO();
-        MongoModelToViewModel(user, userDTO, (err: any, result: UserDTO) => {
+        let userData: UserType = new UserType();
+        MongoModelToViewModel(user, userData, (err: any, result: UserType) => {
           if (err) {
             observer.error(err);
           }
@@ -27,7 +27,7 @@ export function getUserInfo(Email: string): Observable<UserDTO> {
 }
 
 export function userRegistration(
-  model: UserRegisterDAO
+  model: UserRegisterType
 ): Promise<boolean | string> {
   return new Promise((resolve, reject) => {
     bcrypt.hash(model.Password, 10, function(err, hash) {
@@ -44,7 +44,8 @@ export function userRegistration(
       });
       newUser
         .save()
-        .then(() => {
+        .then(res => {
+          console.log(res);
           resolve(true);
         })
         .catch(err => {
