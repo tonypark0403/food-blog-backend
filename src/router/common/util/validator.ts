@@ -1,0 +1,18 @@
+export default function ModelValidator(
+  input: any,
+  model: any,
+  cb: CallableFunction
+) {
+  if (Object.keys(input).length != Object.keys(model).length) {
+    cb("Model fields is out of range");
+  }
+  Object.keys(input).forEach(key => {
+    if (input[key] === "") {
+      cb("Model has empty data");
+    }
+    if (!model.hasOwnProperty(key)) {
+      cb(`${key} is not belong to register model`);
+    }
+  });
+  cb(null);
+}
