@@ -17,3 +17,4 @@ routerV1.use(URL.PHOTO, express.static(path.join("photos")));
 routerV1.use(URL.HOME, homeRouter);
 routerV1.use(URL.USER, userRouter);
 routerV1.use(URL.REVIEW, reviewRouter);
+routerV1.use(URL.PLACE, reviewRouter);

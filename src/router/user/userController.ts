@@ -4,6 +4,7 @@ import { getUserInfo, userRegistration } from "./userService";
 import logger from "../common/util/logger";
 import ModelValidator from "../common/util/validator";
 import { UserRegisterType } from "./userTypes";
+import { User } from "./userModel";
 
 const SESSION_SECRET: any = process.env.SESSION_SECRET;
 
@@ -63,5 +64,19 @@ export const registerUser: RequestHandler = async (req, res, next) => {
   } catch (error) {
     logger.error(error);
     res.status(400).send({ error: error });
+  }
+};
+
+export const getReviewByEmail: RequestHandler = async (req, res, next) => {
+  try {
+    if (req.params.Email === undefined) {
+      throw "Email param is required";
+    }
+    const user: any = await User.findOne({ Email: req.params.Email }).populate(
+      "Reviews"
+    );
+    res.status(200).send(user.Reviews);
+  } catch (err) {
+    res.status(400).send({ error: err });
   }
 };

@@ -6,6 +6,8 @@ const URL = {
   GOOGLE: "/google",
   REGISTER: "/register",
   REVIEW: "/review",
+  SEARCH: "/search",
+  PLACE: "/place",
   AUTOCOMPLETE: "/autocomplete",
   DETAIL: "/detail",
   AUTOCOMPLETEINCITY: "/autocomplete/city"

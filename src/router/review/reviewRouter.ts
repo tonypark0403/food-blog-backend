@@ -6,9 +6,8 @@ import URL from "../common/constants";
 const router = express.Router();
 
 router.get(URL.HOME, reviewController.getReview);
-
+router.get(URL.SEARCH, reviewController.getSearch);
 router.post(URL.HOME, Authorize, reviewController.postReview);
-
 router.delete(URL.HOME + ":id", Authorize, reviewController.deleteReview);
 
 export default router;
