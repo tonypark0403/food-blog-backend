@@ -1,4 +1,4 @@
-import Axios from "axios";
+import axios from "axios";
 import fs from "fs";
 import path from "path";
 import logger from "../common/util/logger";
@@ -40,7 +40,7 @@ export function savePhotoByReference(
 }
 
 const downloadImage = (url: string, image_path: string) =>
-  Axios({
+  axios({
     url,
     responseType: "stream"
   }).then(

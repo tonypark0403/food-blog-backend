@@ -5,7 +5,10 @@ const URL = {
   LOGIN: "/login",
   GOOGLE: "/google",
   REGISTER: "/register",
-  REVIEW: "/review"
+  REVIEW: "/review",
+  AUTOCOMPLETE: "/autocomplete",
+  DETAIL: "/detail",
+  AUTOCOMPLETEINCITY: "/autocomplete/city"
 };
 
 export default URL;
