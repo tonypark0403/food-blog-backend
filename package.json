@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/tonypark0403/food-blog-backend#readme",
   "dependencies": {
+    "axios": "^0.19.0",
     "bcrypt": "^3.0.6",
     "bluebird": "^3.5.5",
     "compression": "^1.7.4",
@@ -33,6 +34,7 @@
     "passport": "^0.4.0",
     "passport-google-oauth": "^2.0.0",
     "passport-local": "^1.0.0",
+    "rimraf": "^3.0.0",
     "rxjs": "^6.5.2",
     "winston": "^3.2.1"
   },
@@ -50,6 +52,7 @@
     "@types/passport": "^1.0.1",
     "@types/passport-google-oauth": "^1.0.41",
     "@types/passport-local": "^1.0.33",
+    "@types/rimraf": "^2.0.2",
     "@types/winston": "^2.4.4",
     "nodemon": "^1.19.1",
     "ts-node": "^8.3.0",

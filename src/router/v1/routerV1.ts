@@ -1,6 +1,7 @@
 import express, { Router } from "express";
 import homeRouter from "../home/homeRouter";
 import userRouter from "../user/userRouter";
+import reviewRouter from "../review/reviewRouter";
 import middlewares from "../../middleware/middlewares";
 import path from "path";
 import URL from "../common/constants";
@@ -15,3 +16,4 @@ routerV1.use(URL.PHOTO, express.static(path.join("photos")));
 
 routerV1.use(URL.HOME, homeRouter);
 routerV1.use(URL.USER, userRouter);
+routerV1.use(URL.REVIEW, reviewRouter);

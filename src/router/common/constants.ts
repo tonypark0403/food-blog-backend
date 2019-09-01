@@ -4,7 +4,8 @@ const URL = {
   USER: "/user",
   LOGIN: "/login",
   GOOGLE: "/google",
-  REGISTER: "/register"
+  REGISTER: "/register",
+  REVIEW: "/review"
 };
 
 export default URL;
