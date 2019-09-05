@@ -1,7 +1,14 @@
+import errorHandler from "errorhandler";
+
 import app from "./app";
 import https from "https";
 import fs from "fs";
 import path from "path";
+
+/**
+ * Error Handler. Provides full stack - remove for production
+ */
+app.use(errorHandler());
 
 /**
  * Start Express server.

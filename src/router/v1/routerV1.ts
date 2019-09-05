@@ -1,10 +1,13 @@
 import express, { Router } from "express";
+import path from "path";
+import "../common/util/envInfo";
 import homeRouter from "../home/homeRouter";
 import userRouter from "../user/userRouter";
 import reviewRouter from "../review/reviewRouter";
 import middlewares from "../../middleware/middlewares";
-import path from "path";
 import URL from "../common/constants";
+import "../user/passport/passport";
+import "../common/db/mongoDB";
 
 export const routerV1 = Router();
 

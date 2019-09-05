@@ -34,6 +34,7 @@ passport.use(
         if (!passwordMatch) {
           throw "Invalid email or password.";
         }
+        console.log("*** IN passport, passport user : ", user);
         done(undefined, user);
       } catch (err) {
         done(err, false);

@@ -9,6 +9,7 @@ import { User } from "./userModel";
 const SESSION_SECRET: any = process.env.SESSION_SECRET;
 
 export const getUser: RequestHandler = (req: any, res) => {
+  logger.debug("getUser start");
   try {
     getUserInfo(req.user.Email).subscribe(
       user => {
@@ -25,6 +26,7 @@ export const getUser: RequestHandler = (req: any, res) => {
 };
 
 export const postUser: RequestHandler = (req: any, res, next) => {
+  logger.debug("***postUser start");
   const token = jwt.sign({ Email: req.user.Email }, SESSION_SECRET, {
     algorithm: "HS512",
     expiresIn: "1d"
@@ -50,7 +52,7 @@ export const getGoogleUser: RequestHandler = (req: any, res, next) => {
 
 export const registerUser: RequestHandler = async (req, res, next) => {
   try {
-    logger.debug(req.body);
+    logger.debug("registerUser", req.body);
     let UserRegister: UserRegisterType = new UserRegisterType();
     ModelValidator(req.body, UserRegister, (err: any) => {
       if (err) {

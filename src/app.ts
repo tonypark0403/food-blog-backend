@@ -1,8 +1,6 @@
 import express from "express";
 import { routerV1 } from "./router/v1/routerV1";
 import URL from "./router/common/constants";
-import "./router/user/passport/passport";
-import "./router/common/db/mongoDB";
 
 const app = express();
 
