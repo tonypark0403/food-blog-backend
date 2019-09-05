@@ -11,12 +11,13 @@ const SESSION_SECRET: any = process.env.SESSION_SECRET;
 export const getUser: RequestHandler = (req: any, res) => {
   logger.debug("getUser start");
   try {
-    getUserInfo(req.user.Email).subscribe(
+    logger.debug("req.user : ", req.user);
+    getUserInfo(req.user.email).subscribe(
       user => {
         res.status(200).json(user);
       },
       err => {
-        throw `${err} --> DB error`;
+        throw `${err} --> DB error... why?`;
       }
     );
   } catch (err) {
@@ -27,7 +28,7 @@ export const getUser: RequestHandler = (req: any, res) => {
 
 export const postUser: RequestHandler = (req: any, res, next) => {
   logger.debug("***postUser start");
-  const token = jwt.sign({ Email: req.user.Email }, SESSION_SECRET, {
+  const token = jwt.sign({ email: req.user.email }, SESSION_SECRET, {
     algorithm: "HS512",
     expiresIn: "1d"
   });
@@ -39,7 +40,7 @@ export const postUser: RequestHandler = (req: any, res, next) => {
 
 export const getGoogleUser: RequestHandler = (req: any, res, next) => {
   try {
-    const token = jwt.sign({ Email: req.user.Email }, SESSION_SECRET, {
+    const token = jwt.sign({ email: req.user.email }, SESSION_SECRET, {
       algorithm: "HS512",
       expiresIn: "1d"
     });
@@ -71,10 +72,10 @@ export const registerUser: RequestHandler = async (req, res, next) => {
 
 export const getReviewByEmail: RequestHandler = async (req, res, next) => {
   try {
-    if (req.params.Email === undefined) {
+    if (req.params.email === undefined) {
       throw "Email param is required";
     }
-    const user: any = await User.findOne({ Email: req.params.Email }).populate(
+    const user: any = await User.findOne({ email: req.params.email }).populate(
       "Reviews"
     );
     res.status(200).send(user.Reviews);

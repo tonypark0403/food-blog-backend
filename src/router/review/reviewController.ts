@@ -28,8 +28,8 @@ export const getReview: RequestHandler = async (req, res) => {
             throw error;
           }
           result.ID = review._id;
-          result.AuthorEmail = review.Author.Email;
-          result.AuthorPicture = review.Author.Picture;
+          result.AuthorEmail = review.Author.email;
+          result.AuthorPicture = review.Author.picture;
           reviewByComments.push(result);
         }
       );
@@ -54,13 +54,13 @@ export const getSearch: RequestHandler = async (req, res) => {
     };
 
     const reviewsByName: ReviewModel[] = await Review.find({
-      LocationName: { $regex: req.query.searchString, $options: ["i", "g"] }
+      locationName: { $regex: req.query.searchString, $options: ["i", "g"] }
     })
       .populate("Author")
       .sort({ WrittenDate: -1 })
       .limit(5);
     const reviewsByAddress: ReviewModel[] = await Review.find({
-      Address: { $regex: req.query.searchString, $options: ["i", "g"] }
+      address: { $regex: req.query.searchString, $options: ["i", "g"] }
     })
       .populate("Author")
       .sort({ WrittenDate: -1 })
@@ -74,8 +74,8 @@ export const getSearch: RequestHandler = async (req, res) => {
             throw error;
           }
           result.ID = review._id;
-          result.AuthorEmail = review.Author.Email;
-          result.AuthorPicture = review.Author.Picture;
+          result.AuthorEmail = review.Author.email;
+          result.AuthorPicture = review.Author.picture;
           reviewDTO.byName.push(result);
         }
       );
@@ -89,8 +89,8 @@ export const getSearch: RequestHandler = async (req, res) => {
             throw error;
           }
           result.ID = review._id;
-          result.AuthorEmail = review.Author.Email;
-          result.AuthorPicture = review.Author.Picture;
+          result.AuthorEmail = review.Author.email;
+          result.AuthorPicture = review.Author.picture;
           reviewDTO.byAddress.push(result);
         }
       );
@@ -164,7 +164,7 @@ export const deleteReview: RequestHandler = async (req: any, res) => {
     }
 
     const userResult: any = await User.findById(reviewResult.Author);
-    if (req.user.Email !== userResult.Email) {
+    if (req.user.email !== userResult.email) {
       throw "user is not valid";
     }
 
