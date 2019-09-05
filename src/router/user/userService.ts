@@ -5,9 +5,9 @@ import { UserRegisterType, UserType } from "./userTypes";
 import { User } from "./userModel";
 import { MongoModelToViewModel } from "../common/util/modelCopy";
 
-export function getUserInfo(Email: string): Observable<UserType> {
+export function getUserInfo(email: string): Observable<UserType> {
   return new Observable(observer => {
-    User.findOne({ Email: Email })
+    User.findOne({ email: email })
       .then(user => {
         if (user === null) {
           observer.error("can not find a user");
@@ -30,17 +30,17 @@ export function userRegistration(
   model: UserRegisterType
 ): Promise<boolean | string> {
   return new Promise((resolve, reject) => {
-    bcrypt.hash(model.Password, 10, function(err, hash) {
+    bcrypt.hash(model.password, 10, function(err, hash) {
       if (err) {
         reject("bcrypt error");
       }
       // Store hash in your password DB.
       let newUser = new User({
-        Name: model.Name,
-        Address: model.Address,
-        Email: model.Email,
-        Password: hash,
-        Picture: getAvatar(model.Email)
+        name: model.name,
+        address: model.address,
+        email: model.email,
+        password: hash,
+        picture: getAvatar(model.email)
       });
       newUser
         .save()
@@ -59,10 +59,10 @@ export function userRegistration(
   });
 }
 
-function getAvatar(Email: string, size: number = 200): string {
+function getAvatar(email: string, size: number = 200): string {
   const md5 = crypto
     .createHash("md5")
-    .update(Email)
+    .update(email)
     .digest("hex");
   return `https://gravatar.com/avatar/${md5}?s=${size}&d=retro`;
 }

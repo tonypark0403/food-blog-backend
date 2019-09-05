@@ -18,19 +18,19 @@ passport.deserializeUser(function(user, done) {
 passport.use(
   new LocalStrategy(
     {
-      usernameField: "Email",
-      passwordField: "Password"
+      usernameField: "email",
+      passwordField: "password"
     },
-    async (Email, Password, done) => {
+    async (email, password, done) => {
       try {
-        const user = await User.findOne({ Email: Email.toLowerCase() });
+        const user = await User.findOne({ email: email.toLowerCase() });
         if (!user) {
-          throw `Email ${Email} not found.`;
+          throw `Email ${email} not found.`;
         }
-        if (!user.Password) {
-          throw `Email ${Email} is not local user`;
+        if (!user.password) {
+          throw `Email ${email} is not local user`;
         }
-        const passwordMatch = await bcrypt.compare(Password, user.Password);
+        const passwordMatch = await bcrypt.compare(password, user.password);
         if (!passwordMatch) {
           throw "Invalid email or password.";
         }
@@ -59,12 +59,12 @@ passport.use(
       done: any
     ) {
       try {
-        const user = await User.findOne({ Email: profile._json.email });
+        const user = await User.findOne({ email: profile._json.email });
         if (!user) {
           const register = new User({
-            Name: profile._json.name,
-            Email: profile._json.email,
-            Picture: profile._json.picture
+            name: profile._json.name,
+            email: profile._json.email,
+            picture: profile._json.picture
           });
           const savedUser = await register.save();
           if (savedUser) {

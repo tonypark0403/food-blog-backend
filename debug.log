@@ -216,3 +216,27 @@
 {"message":"Logging initialized at debug level","level":"debug"}
 {"message":"Using .env file to supply config environment variables","level":"debug"}
 {"message":"***postUser start","level":"debug"}
+{"message":"***postUser start","level":"debug"}
+{"message":"***postUser start","level":"debug"}
+{"message":"getUser start","level":"debug"}
+{"message":"***postUser start","level":"debug"}
+{"message":"getUser start","level":"debug"}
+{"message":"***postUser start","level":"debug"}
+{"message":"getUser start","level":"debug"}
+{"message":"***postUser start","level":"debug"}
+{"message":"getUser start","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St.","level":"debug","message":"registerUser"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"message":"Logging initialized at debug level","level":"debug"}
+{"message":"Using .env file to supply config environment variables","level":"debug"}
+{"Email":"test@test.com","Password":"test123","Name":"test","Address":"1 Yonge St.","level":"debug","message":"registerUser"}
+{"message":"Email is not belong to register model","level":"error"}
+{"email":"test@test.com","password":"test123","name":"test","address":"1 Yonge St.","level":"debug","message":"registerUser"}
+{"message":"***postUser start","level":"debug"}

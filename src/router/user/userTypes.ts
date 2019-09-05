@@ -1,12 +1,12 @@
 export class UserRegisterType {
-  Email: string = "";
-  Name: string = "";
-  Address: string = "";
-  Password: string = "";
+  email: string = "";
+  name: string = "";
+  address: string = "";
+  password: string = "";
 }
 
 export class UserType {
-  Email: string = "";
-  Name: string = "";
-  Picture: string = "";
+  email: string = "";
+  name: string = "";
+  picture: string = "";
 }
